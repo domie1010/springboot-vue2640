@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.JingliDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.JingliEntity" id="jingliMap">
+        <result property="jingligonghao" column="jingligonghao"/>
+        <result property="jinglixingming" column="jinglixingming"/>
+        <result property="mima" column="mima"/>
+        <result property="bumen" column="bumen"/>
+        <result property="xingbie" column="xingbie"/>
+        <result property="dianhua" column="dianhua"/>
+        <result property="youxiang" column="youxiang"/>
+        <result property="shenfenzheng" column="shenfenzheng"/>
+        <result property="jiatingzhuzhi" column="jiatingzhuzhi"/>
+        <result property="touxiang" column="touxiang"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.JingliVO" >
+		SELECT * FROM jingli  jingli         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.JingliVO" >
+		SELECT  jingli.* FROM jingli  jingli
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.JingliView" >
+
+		SELECT  jingli.* FROM jingli  jingli 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.JingliView" >
+		SELECT * FROM jingli  jingli <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	
+</mapper>
